@@ -1,0 +1,30 @@
+#create Mutation for add emp details
+type Mutation{
+    createEmp(addEmp:EmpDetailInput):EmpDetails
+}
+
+input EmpDetailInput {
+    empName:String
+    empRole:String
+    location:String
+    salary:Float
+    empRating:Int
+}
+
+
+#query for empDetails
+type Query{
+    allEmps:[EmpDetails]
+    getEmp(empId:Int):EmpDetails
+}
+
+#declear type for empDetails
+type EmpDetails {
+    id:ID!
+    #ID should not be null
+    empName:String
+    empRole:String
+    location:String
+    salary:Float
+    empRating:Int
+}
